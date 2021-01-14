@@ -1,0 +1,10 @@
+% {修改chapters/title.txt提供当前书名}
+% {{副标题subtitle}}
+---
+creator:
+- role: author
+  text: 王福强 著
+cover-image: cover.jpg
+publisher:  杭州福强科技有限公司出版(www.keevol.com)
+rights: Copyright 2018, Commercial
+...

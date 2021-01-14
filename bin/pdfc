@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+bin=`dirname "${BASH_SOURCE-$0}"`
+basedir=`cd "$bin/../">/dev/null; pwd`
+
+if [ $bin = "bin" ] ; then
+  source bin/prepare.sh
+  CUSTOMER="i@afoo.me"
+  OUTPUT="index.pdf"
+  if [ $# -gt 0 ]; then
+  	CUSTOMER=$1
+    if [ $# -gt 1 ]; then
+      OUTPUT=$2
+    fi  
+  fi  
+  echo "use $CUSTOMER as customer mark"
+  echo "use $OUTPUT as output file name"
+  pandoc --toc-depth=4 --pdf-engine=xelatex --template=${basedir}/templates/zh.latex --top-level-division=section -V documentclass=book -V fontsize=12pt -V lang=zh-CN -V customer="$CUSTOMER" -f markdown+smart "index.md" -o "$OUTPUT"
+  echo '>> pdf format output successfully.'
+else
+  echo "you must run under `$basedir` directory."
+fi

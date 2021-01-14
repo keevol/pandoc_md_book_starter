@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+bin=`dirname "${BASH_SOURCE-$0}"`
+basedir=`cd "$bin/../">/dev/null; pwd`
+
+if [ $bin = "bin" ] ; then
+  source bin/prepare.sh
+  pandoc --toc --toc-depth=4 --epub-metadata=src/metadata.xml --epub-cover-image=src/images/thinkingfq.PNG -o index.epub src/title.txt index.md
+  echo '>> epub format output successfully.'
+else
+  echo "you must run under `$basedir` directory."
+fi

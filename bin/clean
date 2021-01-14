@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+bin=`dirname "${BASH_SOURCE-$0}"`
+basedir=`cd "$bin/../">/dev/null; pwd`
+
+if [ $bin = "bin" ] ; then
+  rm -rf build/*
+  echo 'clean up done successfully.'
+else
+  echo "you must run under `$basedir` directory."
+fi

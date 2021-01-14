@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+bin=`dirname "${BASH_SOURCE-$0}"`
+basedir=`cd "$bin/../">/dev/null; pwd`
+
+if [ $bin = "bin" ] ; then
+  source bin/prepare.sh
+  pandoc -s -N --toc --toc-depth=4 --self-contained -c ~/FuqiangWorks/templates/pandoc/ivy.css "index.md" > "index.html"
+  echo '>> html format output successfully.'
+else
+  echo "you must run under `$basedir` directory."
+fi
