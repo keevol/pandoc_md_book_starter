@@ -176,8 +176,6 @@ $endif$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 \date{$date$}
 
-
-
 \begin{document}
 
 \begin{titlepage}
@@ -192,7 +190,7 @@ $endif$
 	\paragraph{}
 	{\Large\textbf{$for(author)$$author$$sep$ \and $endfor$}}
 	\vfill 
-  \scalebox{0.1}{\includegraphics{/Users/afuluo/FuqiangWorks/templates/pandoc/fqtec}}
+  \scalebox{0.1}{\includegraphics{../templates/fqtec}}
 	\paragraph{杭州福强科技有限公司出品}
 \end{titlepage}
 
